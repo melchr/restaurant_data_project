@@ -9,10 +9,6 @@ class RestaurantViolations
         @type_of_food = api_hash["cuisine_description"]
         @violation_description = api_hash["violation_description"]
         @critical_flag = api_hash["critical_flag"]
-        self.save
-    end
-
-    def save
         @@all << self
     end
 
