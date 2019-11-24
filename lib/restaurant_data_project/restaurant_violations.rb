@@ -8,7 +8,7 @@ class RestaurantViolations
         @restaurant_name = api_hash["dba"]
         @type_of_food = api_hash["cuisine_description"]
         @violation_description = api_hash["violation_description"]
-        @critical_flag = api_hash["critical_flag"]
+        @borough = api_hash["boro"]
         @@all << self
     end
 
