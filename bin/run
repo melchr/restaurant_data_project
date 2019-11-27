@@ -3,4 +3,3 @@
 require_relative '../lib/environment'
 cli_object = CLI.new
 cli_object.begin
-cli_object.start
