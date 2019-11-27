@@ -1,6 +1,6 @@
-class RestaurantViolations
+class RestaurantInspections
 
-    attr_reader :restaurant_name, :type_of_food, :violation_description, :critical_flag
+    attr_reader :restaurant_name, :type_of_food, :violation_description, :grade
 
     @@all = []
 
