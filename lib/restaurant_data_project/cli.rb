@@ -1,19 +1,45 @@
 class CLI
     def begin
         OpenDataAPI.get_data
+        puts "Welcome to the Restaurant Inspection CLI!"
+        menu
     end
 
-    def start
-        puts "Welcome to the Restaurant Violation CLI! Would you like to search for a Restaurant or a Grade Rating?"
-        input = gets.chomp
+    def menu
+        input = nil
+        while input != "exit"
+        puts "Type 1 for a list of Restaurants, type Exit to exit the program"
+        input = gets.strip.downcase
+        case input
+        when "1"
+            puts RestaurantInspections.all #this is incorrect
+        when "exit"
+            break
+        else
+            puts "Invalid entry - Please type either 1 or Exit"
+        end
+    end
     end
 
-    #methods to welcome user and display list using restaurant names & violations
+    def search
+        
+        #else "What Restaurant would you like to search for?"
+        #create method for each to display lists^^^^^
+    end
 
-    #give user a list of restaurants to choose from (will be 25 #]options)
-    #search by rating (B, C), maybe should just do B & C
-    #and say "If your restaurant is not listed here, then it has an A rating!"
+    #display list of restaurant names, then ask user to make an option
+    #RestaurantInspections.all (array of objects)
+    #then user selects from list, which displays info of selection
+    #build a loop
 
-    #RestaurantViolations.all
+    #should not terminate unless user types EXIT, should be aware they can type exit whenever
+    #input validation, re-ask for input, say invalid input using if else
+
+
+
+
+    #give user a list of restaurants to choose from (will be 25 options)
+
+    #if "Grade Rating NUMBER" then give user list of grade options to type (A, B, C, N, P, Z) (OPTIONAL)
 
 end
