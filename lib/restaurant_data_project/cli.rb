@@ -8,18 +8,20 @@ class CLI
     def menu
         input = nil
         while input != "exit"
-        puts "Type 1 for a list of Restaurants, type Exit to exit the program"
-        input = gets.strip.downcase
-        case input
-        when "1"
-            puts RestaurantInspections.all #this is incorrect
-        when "exit"
+          puts "Type 1 for a list of Restaurants, type Exit to exit the program"
+          input = gets.strip.downcase
+          case input
+          when "1"
+            RestaurantInspections.all.each.with_index do |restaurant, index|
+              puts "#{index + 1}: #{restaurant.restaurant_name}"
+            end
+          when "exit"
             break
-        else
+          else
             puts "Invalid entry - Please type either 1 or Exit"
+          end
         end
-    end
-    end
+      end
 
     def search
         
