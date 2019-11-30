@@ -19,6 +19,8 @@ class CLI
             exit
         end
         puts "\nPlease type the number of the restaurant you'd like to learn more about."
+        while input != "exit"
+        
         input = gets.to_i
         restaurant = RestaurantInspections.all[input.to_i - 1]
         OpenDataAPI.single_data(restaurant)
@@ -35,7 +37,9 @@ class CLI
             end
         when "n"
             puts "Please come back soon!"
+            exit
         end
+    end
         #need to loop this somehow
       end
 
@@ -52,12 +56,5 @@ class CLI
 
     #should not terminate unless user types EXIT, should be aware they can type exit whenever
     #input validation, re-ask for input, say invalid input using if else
-
-
-
-
-    #give user a list of restaurants to choose from (will be 25 options)
-
-    #if "Grade Rating NUMBER" then give user list of grade options to type (A, B, C, N, P, Z) (OPTIONAL)
 
 end
