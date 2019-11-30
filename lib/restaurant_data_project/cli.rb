@@ -7,7 +7,7 @@ class CLI
 
     def menu
         input = nil
-        while input != "exit"
+        #while input != "exit"
           puts "Type 1 for a list of Restaurants, type Exit to exit the program"
           input = gets.strip.downcase
           case input
@@ -15,12 +15,17 @@ class CLI
             RestaurantInspections.all.each.with_index do |restaurant, index|
               puts "#{index + 1}: #{restaurant.restaurant_name}"
             end
-          when "exit"
-            break
-          else
-            puts "Invalid entry - Please type either 1 or Exit"
-          end
+        when "exit"
+            exit
         end
+        puts "\nPlease type the number of the restaurant you'd like to learn more about."
+        input = gets.to_i
+        restaurant = RestaurantInspections.all[input.to_i - 1]
+        OpenDataAPI.single_data(restaurant)
+        puts "Restaurant Name: #{restaurant.restaurant_name}"
+        puts "Type of Food: #{restaurant.type_of_food}"
+        puts "Grade Rating: #{restaurant.grade}"
+        puts "Violation Description: #{restaurant.violation_description}"
       end
 
     def search
