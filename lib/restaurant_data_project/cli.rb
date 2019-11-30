@@ -26,6 +26,17 @@ class CLI
         puts "Type of Food: #{restaurant.type_of_food}"
         puts "Grade Rating: #{restaurant.grade}"
         puts "Violation Description: #{restaurant.violation_description}"
+        puts "Would you like to see a different restaurant? (y/n)"
+        input = gets.strip.downcase
+          case input
+          when "y"
+            RestaurantInspections.all.each.with_index do |restaurant, index|
+              puts "#{index + 1}: #{restaurant.restaurant_name}"
+            end
+        when "n"
+            puts "Please come back soon!"
+        end
+        #need to loop this somehow
       end
 
     def search
