@@ -1,8 +1,6 @@
 # RestaurantDataProject
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/restaurant_data_project`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Restaurant CLI Gem! This gem allows ability to search through a given list of restaurants in the NYC boroughs and return data about the type of restaurant, grade rating, and violation description.
 
 ## Installation
 
