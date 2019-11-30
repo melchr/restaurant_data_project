@@ -14,12 +14,13 @@ class CLI
             RestaurantInspections.all.each.with_index do |restaurant, index|
               puts "#{index + 1}: #{restaurant.restaurant_name}"
             end
+            more_info
           elsif input == "exit"
             exit
         else
             puts "Invalid entry, please type either 1 or exit."
         end
-        more_info
+        #need to fix "Invalid Entry" option - more_info shows up after and is incorrect
     end
     end
 
