@@ -10,18 +10,17 @@ class CLI
           puts "Type 1 for a list of Restaurants, type Exit to exit the program at anytime."
           while input != "exit"
           input = gets.strip.downcase
-          if input == "1"
-            RestaurantInspections.all.each.with_index do |restaurant, index|
+            if input == "1"
+              RestaurantInspections.all.each.with_index do |restaurant, index|
               puts "#{index + 1}: #{restaurant.restaurant_name}"
-            end
-            more_info
-          elsif input == "exit"
-            exit
-        else
-            puts "Invalid entry, please type either 1 or exit."
-        end
-        #need to fix "Invalid Entry" option - more_info shows up after and is incorrect
-    end
+              end
+               more_info
+            elsif input == "exit"
+              exit
+            else
+              puts "Invalid entry, please type either 1 or exit."
+           end
+          end
     end
 
     def more_info
@@ -35,30 +34,32 @@ class CLI
         puts "Type of Food: #{restaurant.type_of_food}"
         puts "Grade Rating: #{restaurant.grade}"
         puts "Violation Description: #{restaurant.violation_description}"
-        puts "\nWould you like to see a different restaurant? (y/n)"
-        input = gets.strip.downcase
-          if input == "y"
-            RestaurantInspections.all.each.with_index do |restaurant, index|
-              puts "#{index + 1}: #{restaurant.restaurant_name}"
-            end
-        elsif input == "exit"
-            exit
-        elsif input ==  "n"
-            puts "\nThanks for using the Restaurant Data CLI!"
-            puts "\n"
-            exit
-        else
-            puts "Invalid entry, please type y, n, or exit."
-          end
+        diff_restaurant
+        end
     end
-        #need to loop this somehow
-      end
 
-    def search
+        def diff_restaurant
+            input = nil
+              puts "\nWould you like to see a different restaurant? (Yes/No/Exit)"
+              while input != "exit"
+              input = gets.strip.downcase
+                if input == "yes"
+                  RestaurantInspections.all.each.with_index do |restaurant, index|
+                  puts "#{index + 1}: #{restaurant.restaurant_name}"
+                  end
+                elsif input == "no"
+                  puts "\nThanks for using the Restaurant CLI!"
+                  puts "\n"
+                  exit
+                else #if i type something else, the program continues to run
+                  puts "Invalid entry, please type Yes, No, or Exit."
+               end
+              end
+        end
         
         #else "What Restaurant would you like to search for?"
         #create method for each to display lists^^^^^
-    end
+
 
     #display list of restaurant names, then ask user to make an option
     #RestaurantInspections.all (array of objects)
@@ -69,3 +70,6 @@ class CLI
     #input validation, re-ask for input, say invalid input using if else
 
 end
+
+
+
