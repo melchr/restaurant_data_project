@@ -7,7 +7,7 @@ class CLI
 
     def menu
         input = nil
-          puts "Type 1 for a list of Restaurants, type Exit to exit the program at anytime."
+          puts "Type 1 for a list of Restaurants, type Exit to leave the program at anytime."
           while input != "exit"
           input = gets.strip.downcase
             if input == "1"
@@ -27,7 +27,7 @@ class CLI
 
     def more_info #if i type "exit", the program continues, if i type anything else, the program continues
         input = nil
-        puts "\nPlease type the number of the restaurant you'd like to learn more about."
+        puts "\nPlease type the number of the restaurant you'd like to learn more about, or type 'exit' to leave the program."
         while input != "exit"
         input = gets.chomp
         if input.to_i.between?(1,26) #dont hard code 25, data type for gets.chomp
@@ -50,20 +50,24 @@ class CLI
 
         def diff_restaurant
             input = nil
-              puts "\nWould you like to see a different restaurant? (Yes/No/Exit)"
-              while #input != "exit"
-              input = gets.strip.downcase
+              puts "\nWould you like to see a different restaurant? Please type 'Yes' or 'No'."
+              while input != "exit"
+              input = gets.chomp.downcase
                 if input == "yes"
                     RestaurantInspections.all.each.with_index do |restaurant, index|
                         puts "#{index + 1}: #{restaurant.restaurant_name}"
                         end
                     more_info
-                elsif input == "no" || "exit"
+                elsif input == "no" #when i combine "no" and "exit", they don't work
+                  puts "\nThanks for using the Restaurant Inspection CLI!"
+                  puts "\n"
+                  exit
+                elsif input == "exit"
                   puts "\nThanks for using the Restaurant Inspection CLI!"
                   puts "\n"
                   exit
                 else #if i type something else, the program exits
-                  puts "Invalid entry, please type Yes, No, or Exit."
+                  puts "Invalid entry, please type 'Yes' or 'No'.'"
                end
               end
         end
