@@ -10,11 +10,14 @@ Go to https://github.com/melchr/restaurant_data_project
 
 Under the repository name, click Clone or download.
 
-To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click Use SSH and copy the URL to your clipboard.
+Select whether you'd like to clone with an SSH key or URL, and press the clipboard icon to copy it.
 
 Next, open your Terminal.
 
-Change the current working directory to the location where you want the cloned directory to be made. (cd/)
+Change the current working directory to the location where you want the cloned directory to be made.
+```
+cd/restaurant_data_project
+```
 
 Type git clone, and then paste the URL you copied.
 ```
@@ -22,22 +25,26 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 ```
 Press Enter. Your local clone will be created.
 
-(for troubleshooting help, go to https://help.github.com/en/articles/troubleshooting-connectivity-problems)
-
+Then, install dependencies by typing:
 ```
-gem install httparty
+bundle install
 ```
 
+To make a pull request, please go to: https://github.com/melchr/restaurant_data_project/compare
 
-
-make a pull request
-https://github.com/melchr/restaurant_data_project/compare
+(For troubleshooting help, go to https://help.github.com/en/articles/troubleshooting-connectivity-problems)
 
 ## Usage
 
-TODO: Write usage instructions here
-
-in terminal, after changing directories (cd) type bin/restaurant_cli
+To start the Restaurant Data Project, change directories to where the github clone is located by typing
+```
+cd
+```
+Next, type the following to start the program:
+```
+bin/restaurant_cli
+```
+This will immediately prompt you and guide you through the app.
 
 ## Development
 
