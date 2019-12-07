@@ -19,7 +19,7 @@ Next, open your Terminal.
 
 Change the current working directory to the location where you want the cloned directory to be made.
 ```
-cd/restaurant_data_project
+cd restaurant_data_project
 ```
 
 Type git clone, and then paste the URL you copied.
@@ -39,9 +39,10 @@ To make a pull request, please go to: https://github.com/melchr/restaurant_data_
 
 ## Usage
 
-To start the Restaurant Data Project, change directories to where the github clone is located by typing
+To start the Restaurant Data Project, change directories to where the github clone is located.
 ```
-cd
+cd YOUR-FOLDER
+cd restaurant_data_project
 ```
 Type the following to start the program:
 ```
