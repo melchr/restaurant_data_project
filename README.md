@@ -11,6 +11,9 @@ Go to https://github.com/melchr/restaurant_data_project
 Under the repository name, click Clone or download.
 
 Select whether you'd like to clone with an SSH key or URL, and press the clipboard icon to copy it.
+```
+git@github.com:melchr/restaurant_data_project.git
+```
 
 Next, open your Terminal.
 
