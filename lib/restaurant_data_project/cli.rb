@@ -30,7 +30,7 @@ class CLI
           puts "\nPlease type the number of the restaurant you'd like to learn more about, or type 'exit' to leave the program."
             while input != "exit"
             input = gets.chomp
-            if input.to_i.between?(1,25) #dont hard code 25, data type for gets.chomp
+            if input.to_i.between?(1,25)
                 restaurant = RestaurantInspections.all[input.to_i - 1]
                 OpenDataAPI.single_data(restaurant)
                 puts "\nRestaurant Name: #{restaurant.restaurant_name}"
@@ -57,7 +57,7 @@ class CLI
                         puts "#{index + 1}: #{restaurant.restaurant_name}"
                         end
                     more_info
-                elsif input == "no" #when i combine "no" and "exit", they don't work
+                elsif input == "no"
                   puts "\nThanks for using the Restaurant Inspection CLI!"
                   puts "\n"
                   exit
@@ -65,7 +65,7 @@ class CLI
                   puts "\nThanks for using the Restaurant Inspection CLI!"
                   puts "\n"
                   exit
-                else #if i type something else, the program exits
+                else
                   puts "Invalid entry, please type 'Yes' or 'No'.'"
                end
               end
