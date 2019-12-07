@@ -40,7 +40,7 @@ To start the Restaurant Data Project, change directories to where the github clo
 ```
 cd
 ```
-Next, type the following to start the program:
+Type the following to start the program:
 ```
 bin/restaurant_cli
 ```
