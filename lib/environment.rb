@@ -1,4 +1,3 @@
-require 'pry'
 require 'httparty'
 require_relative "restaurant_data_project/version"
 require_relative "restaurant_data_project/cli"
